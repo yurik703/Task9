@@ -13,7 +13,7 @@ public class NonFlatFiguresActivity extends AppCompatActivity {
 
         final GLSurfaceView glSurfaceView = new GLSurfaceView(this);
         glSurfaceView.setEGLContextClientVersion(2);
-        OpenGLRendererPyr renderer = new OpenGLRendererPyr();
+        OpenGLRendererCube renderer = new OpenGLRendererCube();
         glSurfaceView.setRenderer(renderer);
         setContentView(glSurfaceView);
     }

@@ -7,8 +7,8 @@ import android.opengl.Matrix;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
-public class OpenGLRendererPyr implements GLSurfaceView.Renderer {
-    private Pyramid pyramid;
+public class OpenGLRendererCube implements GLSurfaceView.Renderer {
+    private Cube cube;
 
     private final float[] mMVPMatrix = new float[16];
     private final float[] mProjectionMatrix = new float[16];
@@ -26,8 +26,8 @@ public class OpenGLRendererPyr implements GLSurfaceView.Renderer {
 
     @Override
     public void onSurfaceCreated(GL10 gl10, EGLConfig eglConfig) {
-        GLES20.glClearColor(0f,0f,0f,1f);
-        pyramid = new Pyramid();
+        GLES20.glClearColor(1f,0f,0f,1f);
+        cube = new Cube();
     }
 
     @Override
@@ -55,7 +55,7 @@ public class OpenGLRendererPyr implements GLSurfaceView.Renderer {
     @Override
     public void onDrawFrame(GL10 gl10) {
         GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT|GLES20.GL_DEPTH_BUFFER_BIT);
-        pyramid.draw(mMVPMatrix);
+        cube.draw(mMVPMatrix);
 
     }
 }
